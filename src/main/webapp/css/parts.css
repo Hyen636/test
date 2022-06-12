@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+
+@font-face{
+	src: url("../font/KOPUBWORLD DOTUM MEDIUM.TTF");
+    font-family: "KOPUB_M";
+}
+ 
+@font-face{
+	src:url("../font/KOPUBWORLD DOTUM LIGHT.TTF");
+	font-family: "KOPUB_L";
+}
+
+@font-face{
+	src:url("../font/KOPUBWORLD DOTUM BOLD.TTF");
+	font-family: "KOPUB_B";
+}
+
+
+#parts h2{
+	text-align:center;
+	margin-top:20px;
+	color:  #fe620d;
+	font-family: "KOPUB_B";
+	font-size: 30px;
+}
+
+#parts .content{
+	display:flex;
+	flex-direction:row;
+}
+
+
+
+/* parts_input */
+#parts .left{
+	flex-basis: 400px;
+	padding: 10px;
+}
+
+#frm_parts_input{
+	text-align:center;
+	padding: 30px 10px; 
+	border: 2px solid #fe620d;
+	border-radius:10px;
+	margin: 39px auto;
+	
+}
+
+#parts label{
+	display:inline-block;
+	width:70px;
+	text-align:left;
+	margin: 5px auto;
+	color:#5a5a5a;
+	font-family: "KOPUB_M";
+}
+
+#parts input[type=text]{
+	margin:5px 5px 0 auto;
+	border: 1.5px solid #fe620d;
+	border-radius: 3px;
+	font-family: "KOPUB_L";
+}
+
+#parts button{
+	margin: 20px auto 5px auto;
+	background-color: #fe620d;
+ 	border: none;
+ 	border-radius: 3px;
+  	color: white;
+ 	padding: 2px 10px;
+ 	font-size:11pt;
+}
+
+#parts button:hover{
+	background-color: #fea676;
+}
+
+#parts button:disabled{
+	background-color: #fea676;
+	
+}
+
+#parts #btns{
+	text-align: center;
+}
+
+
+
+/* parts_list */
+#parts .right{
+	flex-grow:1;
+	padding:10px;
+	text-align:center;
+}
+
+#parts_list{
+	width:750px;
+	line-height:1.5em;
+	margin:auto;
+}
+
+#frm_parts_list{
+	text-align: right;
+}
+
+#frm_parts_list button{
+	margin: -20px 0px 10px 0px;
+}
+
+#parts_list .title{
+	background-color:#fe620d;
+	font-family: "KOPUB_M";
+	color:#fff;
+}
+
+#parts_list span{
+	display:inline-block;
+	text-align:center;
+	margin:5px auto;
+}
+
+#parts_list .no{width:70px;}
+#parts_list .code{width:100px;}
+#parts_list .codeName{width:200px;}
+#parts_list .spec{width:200px;}
+#parts_list .price{width:100px;}
+
+#parts_list .item:nth-child(5n){
+	border-bottom: 1px solid #fe620d;
+}
+
+#parts_list .item:last-child{
+	border-bottom: 2px solid #fe620d;
+}
+
+#parts_list .item:hover{
+	background-color: #fea676;
+	cursor:pointer;
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="product">
+
+	<select id='tot_size' parameterType="bean.Page" resultType="Integer"> 
+		select count(sno) from product pd left join parts p
+		on pd.code = p.code
+		where pd.code like     '%${findStr}%' 
+		or    p.codeName like  '%${findStr}%' 
+		or    pd.nal like      '%${findStr}%' 
+	</select>
+
+	<select id='select' parameterType="bean.Page" resultType="product.ProductVo">
+		select * from product pd left join parts p
+		on pd.code = p.code
+		where pd.code like     '%${findStr}%' 
+		or    p.codeName like  '%${findStr}%' 
+		or    pd.nal like      '%${findStr}%' 
+		order by sno     <!--  order by pd.nal desc, p.codeName asc(=기본값) -->
+		limit ${startNo}, ${listSize}	
+	</select>
+
+	<select id='view' parameterType="Integer" resultType="product.ProductVo"> 
+		select * from product pd left join parts p
+		on pd.code = p.code 
+		where sno = #{_parameter}
+	</select>
+	
+	<select id='find_code' parameterType="String" resultType="parts.PartsVo">
+		select * from parts 
+		where code like '%${_parameter}%'
+		or 	  codeName like '%${_parameter}%'
+		or	  spec like'%${_parameter}%'
+		<!-- or 	  price = #{_parameter} -->	
+	</select>
+	
+	<insert id='insert' parameterType="product.ProductVo" >
+		insert into product(code, nal, ea, price, amt) 
+		values(#{code}, #{nal}, #{ea}, #{price}, ea*price )
+	</insert>
+
+	<update id='update' parameterType="product.ProductVo" >
+		update product set code=#{code} , nal=#{nal} , 
+			   price=#{price} , ea=#{ea} , amt=price*ea 
+		where  sno = #{sno}
+	</update>
+	
+	<delete id='delete' parameterType="Integer">
+		delete from product where sno=#{_parameter}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

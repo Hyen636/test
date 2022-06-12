@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="parts">
+
+	<select id='tot_size' parameterType="bean.Page" resultType="Integer"> <!-- 정수형 리턴 -->
+		select count(code) from parts 
+		where code like  '%${findStr}%' 
+		or codeName like '%${findStr}%' 
+		or spec like     '%${findStr}%' 
+	</select>
+
+	<select id='select' parameterType="bean.Page" resultType="parts.PartsVo">
+		select * from parts 
+		where code like  '%${findStr}%' 
+		or codeName like '%${findStr}%' 
+		or spec like     '%${findStr}%' 
+		order by code
+		limit ${startNo}, ${listSize}	
+	</select>
+
+	<select id='view' parameterType="String" resultType="parts.PartsVo"> 
+		select * from parts where code = #{_parameter}
+	</select>
+	
+	<insert id='insert' parameterType="parts.PartsVo" >
+		insert into parts(code, codeName, spec, price) 
+		values(#{code}, #{codeName}, #{spec}, #{price} )
+	</insert>
+
+	<update id='update' parameterType="parts.PartsVo" >
+		update parts set codeName=#{codeName} , spec=#{spec} , price=#{price} 
+		where code = #{code}
+	</update>
+	
+	<delete id='delete' parameterType="String">
+		delete from parts where code=#{_parameter}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

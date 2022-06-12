@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="noti">
+
+	<select id='totSize' parameterType='bean.Page' resultType='Integer'>
+		select count(sno) from noti 
+		where id 	  like '%${findStr}%'
+		or    subject like '%${findStr}%'
+		or    doc 	  like '%${findStr}%'
+	</select>
+	
+	<!-- 
+		Vo 	=> #{code} = getCode()
+		Map => #{code} = get("code") 
+		JSON Object = Map
+	-->
+	<select id='select' parameterType='bean.Page' resultType='Map'> 
+		select sno, id, nal, subject, doc from noti
+		where id 	  like '%${findStr}%'
+		or    subject like '%${findStr}%'
+		or    doc 	  like '%${findStr}%'
+		order by sno desc
+		limit ${startNo}, ${listSize}
+	</select>
+	
+	<!-- 데이터를 입력(insert)했을때 최신 자료를 추가할때 입력한 마지막 자료를 가져오기 위해 -->
+	<select id='selectLastOne' resultType='Map'> <!-- 항상 마지막 자료 하나이기 때문에 parameterType = X -->
+		select * from noti 
+		order by sno desc
+		limit 0, 1 <!-- 첫번째 데이터에서 한건만 가져오기 -->
+	</select>
+	
+	<insert id='insert' parameterType='Map'> <!-- 기본적으로 정수형 반환 -->
+		insert into noti(nal, id, subject, doc)
+		values( #{nal}, #{id}, #{subject}, #{doc} )
+	</insert>
+	
+	<update id='update' parameterType='Map'>
+		update noti set nal=#{nal}, subject=#{subject}, doc=#{doc}
+		where sno = #{sno}
+	</update>
+	
+	<delete id='delete' parameterType='Map'>
+		delete from noti where sno = #{sno} <!-- ==>get("sno") -->
+	</delete>
+</mapper>

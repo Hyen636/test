@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "dynamic">
+	<select id="select_90" parameterType="Integer" resultType="score.ScoreVo">
+		select * from score 
+		<if test="_parameter != null"> 
+			where score >= ${_parameter}
+		</if>
+	</select>
+	
+	<select id="choose" parameterType="String" resultType="Double">
+		<choose>
+			<when test="_parameter == '총점'">
+				select sum(score) from score
+			</when>
+			<when test="_parameter == '평균'">
+				select avg(score) from score
+			</when>
+			<when test="_parameter == '최대값'">
+				select max(score) from score
+			</when>
+			<otherwise>
+				select count(score) from score
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="foreach1" parameterType="List" resultType="score.ScoreVo">
+		select * from score
+		<where>
+			sno in
+			<foreach open="(" collection="list" item="d" separator="," close=")">
+				${d}
+			</foreach>
+		</where>
+	</select>
+	
+	<update id="score_update" parameterType="Map">
+			<if test="sno !=null">
+				update score set score = ${score} where sno = ${sno}
+			</if>
+	</update>
+	
+</mapper>
+
+
+
+
+

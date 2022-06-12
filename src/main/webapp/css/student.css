@@ -1,0 +1,250 @@
+@charset "UTF-8";
+/*
+파랑 5c7eec
+노랑 ffc414
+연노랑 ffe697
+*/
+
+@font-face{
+	src: url("../font/KOPUBWORLD DOTUM MEDIUM.TTF");
+    font-family: "KOPUB_M";
+}
+ 
+@font-face{
+	src:url("../font/KOPUBWORLD DOTUM LIGHT.TTF");
+	font-family: "KOPUB_L";
+}
+
+@font-face{
+	src:url("../font/KOPUBWORLD DOTUM BOLD.TTF");
+	font-family: "KOPUB_B";
+}
+
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: "KOPUB_L";
+}
+
+/* login / out */
+
+#frm_login{
+	margin: 40px auto;
+	position: relative;
+	padding: 30px auto;
+	--background-color: #5c7eec;
+	border-radius: 5px;
+	width: 300px;
+	padding: 30px auto;
+	text-align: center;
+}
+
+#loginId, #loginPwd{
+	width: 200px;
+	height: 40px;
+	border: solid 2px #ffc414;
+	border-radius: 70px;
+	margin: auto;
+	padding: 5px;
+	
+}
+#frm_login h2, #frm_find_id h2, #frm_find_pwd h2{
+	margin: 20px auto 30px auto;
+	color: #ffc414;
+	font-size: 20pt;
+	font-family: "KOPUB_B";
+}
+
+/* #frm_login input[type=image], #frm_find_id input[type=image],
+#frm_find_pwd input[type=image]{
+ 
+} */
+
+#frm_login input[type=text], #frm_login input[type=password],
+#frm_find_id input[type=text], #frm_find_pwd input[type=text]{
+	display:inline-block;
+	border: 0px;
+	border-radius: 3px;
+	--background-color: #ffc414;
+	line-height: 25px;
+}
+
+#frm_find_id label, #frm_find_pwd label{
+	margin: auto;
+	display: inline-block;
+	width:50px;
+	margin-right: 2px;
+	text-align: left;
+}
+
+#btn_login2, #btn_find_id, #btn_find_pwd{
+	margin: 5px auto 15px auto;
+	 background-color: #ffc414;
+ 	 border: none;
+ 	 border-radius: 3px;
+  	 color: white;
+ 	 padding: 5px 15px;
+ 	 font-size:11pt;
+ 	 width: 200px
+}
+
+#btn_login2:hover, #btn_find_id:hover, #btn_find_pwd:hover{
+	background-color: #ffe697;
+}
+
+#frm_login>a{
+	margin: 10px auto 20px auto;
+	font-size: 9pt;
+}
+
+#frm_find_id, #frm_find_pwd{
+	margin: 40px auto;
+	position: relative;
+	padding: 30px auto;
+	border-radius: 10px;
+	width: 300px;
+	text-align: center;
+}
+
+
+/* student input */
+#student{
+	text-align: center;
+}
+
+#student h2{
+	text-align:center;
+	margin-bottom:20px;
+	color:  #fe620d;
+	font-family: "KOPUB_B";
+	
+}
+
+#frm_student{
+	padding:20px;
+	margin: 20px auto;
+	width:500px;
+	text-align: left;
+	border: 2px solid  #fe620d;
+	border-radius: 10px;
+}
+
+#frm_student label{
+	display:inline-block;
+	width:70px;
+	text-align:right;
+	margin: 3px 10px auto 40px;
+}
+
+#frm_student .radio{
+	margin-left:-25px
+}
+
+#frm_student button{
+	margin: 10px auto 5px auto;
+	 background-color: #fe620d;
+ 	 border: none;
+ 	 border-radius: 3px;
+  	 color: white;
+ 	 padding: 2px 10px;
+ 	 font-size:11pt;
+}
+
+#frm_student button:hover{
+	background-color: #fea676;
+}
+
+#btn{
+	text-align:center;
+	margin: -10px auto;
+}
+
+#frm_student input[type=text],#frm_student input[type=password]{
+	margin:5px auto 0 auto;
+	border: 1.5px solid #fe620d;
+	border-radius: 3px;
+}
+
+
+/*student_list*/
+
+#student_list{
+	width:1200px;
+	padding:20px;
+	margin:30px auto;
+	line-height:1.5em;
+	text-align:center;
+}
+
+#student_list h2{
+	margin: -10px auto 20px auto;
+	color:  #fe620d;
+	font-size: 30px;
+}
+
+#student_list span{
+	display:inline-block;
+	text-align:center;
+	margin:5px auto;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	
+}
+
+#student_list .no{width:50px;}
+#student_list .id{width:100px;}
+#student_list .mName{width:100px;}
+#student_list .gender{width:50px;}
+#student_list .phone{width:150px;}
+#student_list .address{width:300px;}
+#student_list .email{width:150px;}
+#student_list .zipcode{width:70px;}
+#student_list .pwd{width:100px;}
+
+#student_list .item:nth-child(5n){
+	border-bottom: 1px solid #fe620d;
+}
+
+#student_list .item:last-child{
+	border-bottom: 2px solid #fe620d;
+}
+
+#student_list .item:hover{
+	background-color: #fea676;
+	cursor:pointer;
+}
+
+#student_list .paging{
+	text-align:center;
+}
+
+#frm_student_list{
+	text-align:right;
+}
+
+#frm_student_list input[type=text]{
+	margin:5px auto 10px auto;
+	border: 1.5px solid #fe620d;
+	border-radius: 3px;
+	padding:3px;
+}
+
+#student_list button {
+	margin: 30px auto 5px auto;
+	 background-color: #fe620d;
+ 	 border: none;
+ 	 border-radius: 3px;
+  	 color: white;
+ 	 padding: 2px 10px;
+ 	 font-size:11pt;
+}
+
+#student_list button:hover{
+	background-color: #fea676;
+}
+#list>.title{
+	background-color:#fe620d;
+	font-family: "KOPUB_M";
+	color:#fff;
+}

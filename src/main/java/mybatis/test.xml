@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "test">
+	<select id='tot_list' parameterType='String' resultType='Integer'>
+		select count(sno) from score
+		where subject like '%${_parameter}%'
+	</select>
+	
+	<!-- 전산 과목의 합계 -->
+	<select id='sum_list' parameterType='String' resultType='Integer'>
+		select sum(score) from score
+		where subject like '%${_parameter}%' <!-- subject=#{_parameter} -->
+	</select>
+	
+	<select id='list_comp' parameterType='String' resultType='score.ScoreVo'>
+		select id,score from score where subject=#{_parameter}
+	</select>
+	
+	<select id='list_comp2' parameterType='String' resultType='score.ScoreVo'>
+		select st.id, mName, phone, email, score 
+		from student st join score sc on st.id = sc.id 
+		where subject =#{_parameter}
+	</select>
+	
+	<insert id='score_input' parameterType='score.ScoreVo'>
+		insert into score(id, nal, subject, score)
+		values(#{id}, #{nal}, #{subject}, #{score})
+	</insert> 
+	
+	<update id='score_update' parameterType='score.ScoreVo'>
+		update score set score = ${score} where sno = ${sno}
+	</update>
+	
+	<delete id='score_delete' parameterType='Integer'>
+		delete from score where sno=${_parameter}
+	</delete>
+</mapper>

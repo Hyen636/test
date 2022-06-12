@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+@font-face{
+	src: url("../font/KOPUBWORLD DOTUM MEDIUM.TTF");
+    font-family: "KOPUB_M";
+}
+ 
+@font-face{
+	src:url("../font/KOPUBWORLD DOTUM LIGHT.TTF");
+	font-family: "KOPUB_L";
+}
+
+@font-face{
+	src:url("../font/KOPUBWORLD DOTUM BOLD.TTF");
+	font-family: "KOPUB_B";
+}
+
+*{
+	font-family: "KOPUB_L";
+}
+#score{
+	text-align: center;
+	margin:50px auto;
+}
+
+#score h2{
+	text-align:center;
+	margin-bottom:20px;
+	color:  #fe620d;
+	font-family: "KOPUB_B";
+	
+}
+
+#frm_score{
+	padding:20px;
+	margin: 20px auto;
+	width:500px;
+	text-align: left;
+	border: 2px solid  #fe620d;
+	border-radius: 10px;
+	font-family: "KOPUB_L";
+}
+
+
+
+#frm_score label{
+	display:inline-block;
+	width:70px;
+	text-align:right;
+	margin: 3px 10px auto 90px;
+	color:#5a5a5a;
+	
+}
+#frm_find_name label{
+	display:inline-block;
+	width:70px;
+	text-align:left;
+	color:#fe620d;
+	font-weight: bold;
+	font-size: 15pt;
+	margin-left : -160px;
+}
+
+
+#score_view_label{
+	margin: 3px auto auto 25px;
+}
+
+#frm_score button, #frm_find_name button{
+	 margin: 10px auto 5px auto;
+	 background-color: #fe620d;
+ 	 border: none;
+ 	 border-radius: 3px;
+  	 color: white;
+ 	 padding: 2px 10px;
+ 	 font-size:11pt;
+}
+
+#frm_score button:hover, #frm_find_name button:hover{
+	background-color: #fea676;
+}
+
+#frm_find_name .btnName{
+	margin-left:-180px;
+}
+
+#btn{
+	text-align:center;
+	margin: 15px auto 10px auto;
+}
+
+#frm_score input[type=text], #frm_score input[type=date]
+, #frm_find_name input[type=text]{
+	margin:5px 5px 0 auto;
+	border: 1.5px solid #fe620d;
+	border-radius: 3px;
+	font-family: "KOPUB_L";
+}
+
+/* socre_list */
+
+#score_list{
+	width:1000px;
+	padding:20px;
+	margin:30px auto;
+	line-height:1.5em;
+	text-align:center;
+	font-family: "KOPUB_L";
+}
+
+#score_list h2{
+	margin: -10px auto 20px auto;
+	color:  #fe620d;
+	font-family: "KOPUB_B";
+	font-size: 30px;
+}
+
+#score_list span{
+	display:inline-block;
+	text-align:center;
+	margin:5px auto;
+}
+
+#score_list .sno{width:100px;}
+#score_list .id{width:150px;}
+#score_list .mName{width:100px;}
+#score_list .subject{width:200px;}
+#score_list .score{width:150px;}
+#score_list .nal{width:200px;}
+
+#score_list .item:nth-child(5n){
+	border-bottom: 1px solid #fe620d;
+}
+
+#score_list .item:last-child{
+	border-bottom: 2px solid #fe620d;
+}
+
+#score_list .item:hover{
+	background-color: #fea676;
+	cursor:pointer;
+}
+
+#score_list .paging{
+	text-align:center;
+}
+
+#frm_score_list{
+	text-align:right;
+}
+
+#frm_score_list input[type=text]{
+	margin:5px auto 10px auto;
+	border: 1.5px solid #fe620d;
+	border-radius: 3px;
+	padding:3px;
+}
+
+#score_list button {
+	margin: 30px auto 5px auto;
+	 background-color: #fe620d;
+ 	 border: none;
+ 	 border-radius: 3px;
+  	 color: white;
+ 	 padding: 2px 10px;
+ 	 font-size:11pt;
+}
+
+#score_list button:hover{
+	background-color: #fea676;
+}
+#list>.title{
+	background-color:#fe620d;
+	font-family: "KOPUB_M";
+	color:#fff;
+}

@@ -1,0 +1,192 @@
+@charset "UTF-8";
+@font-face{
+	src: url("../font/KOPUBWORLD DOTUM MEDIUM.TTF");
+    font-family: "KOPUB_M";
+}
+ 
+@font-face{
+	src:url("../font/KOPUBWORLD DOTUM LIGHT.TTF");
+	font-family: "KOPUB_L";
+}
+
+@font-face{
+	src:url("../font/KOPUBWORLD DOTUM BOLD.TTF");
+	font-family: "KOPUB_B";
+}
+
+
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: "KOPUB_L";
+}
+/* BOARD INPUT */
+
+#board{
+   min-height: 400px; /* 기본 높이가 만들어짐. */
+   position: relative;
+   line-height: 1em;
+   padding: 30px 0px 50px 0px;
+   margin-bottom: 20px;
+   margin-top: 10px;
+   font-family: 나눔바른고딕 Light;
+}
+#board>h2{
+   font-family: 나눔바른고딕 Light;
+   margin: 14px 20px 20px 20px;
+   text-align: center;
+   padding-bottom: 15px;
+}
+
+#board>#frm_board{
+   --width: 300px;
+   margin-top: 5px;
+   margin-left: 340px;
+   padding: 15px;
+}
+#board>#frm_board label{
+   --margin-left: 130px;
+}
+#board>#frm_board input{
+   margin-bottom: 10px;
+   margin-left: 5px;
+}
+#board>#frm_board input[name=nal]{
+   padding-right: 20px;
+}
+#board>#frm_board input[name=subject]{
+   margin-left: 20px;
+   padding-right: 282px;
+}
+#board>#frm_board textarea{
+   --margin-left: 52px;
+   width: 500px;
+   height: 200px;
+}
+#board .attFile{
+   margin-top: 8px;
+   background-color: #fe620d;
+   border: 1px solid #fe620d;
+   border-radius: 5px;
+   width: 80px;
+   height: 20px;
+   font-family: 나눔바른고딕 Light;
+}
+#board .attFile:hover{
+   cursor: pointer;
+   background-color: #ffad82;
+   border: 1px solid #fe620d;
+   border-radius: 5px;
+   color: #fff;
+   font-family: 나눔바른고딕 Light;
+   transition : all .2s;
+}
+#board>#frm_board .attList{
+   border: 1px solid #747474;
+   width: 500px;
+   height: 120px;
+   margin: 4px 0;
+}
+#board>#frm_board .btns{
+   padding: 0px;
+   margin-left: 150px;
+}
+#board .btnSave{
+   margin-top: 10px;
+   --margin-left: 130px;
+}
+#board .btnSave,.btnCancel{
+   background-color: #fe620d;
+   border: 1px solid #fe620d;
+   border-radius: 5px;
+   width: 80px;
+   height: 20px;
+   font-family: 나눔바른고딕 Light;
+}
+#board .btnSave:hover,.btnCancel:hover{
+   cursor: pointer;
+   background-color: #ffad82;
+   border: 1px solid #fe620d;
+   border-radius: 5px;
+   color: #fff;
+   font-family: 나눔바른고딕 Light;
+   transition : all .2s;
+}
+
+/* BOARD LIST */
+
+#board_list{
+	width:1000px;
+	padding:20px;
+	margin:30px auto;
+	line-height:1.5em;
+	text-align:center;
+	font-family: "KOPUB_L";
+}
+
+#board_list>h2{
+  	margin: -10px auto 20px auto;
+	color:  #fe620d;
+	font-family: "KOPUB_B";
+	font-size: 30px;
+}
+
+#score-list span{
+	display:inline-block;
+	text-align:center;
+	margin:5px auto;
+}
+
+#frm_board_list{
+	text-align:right;
+}
+
+#board_list input[type=search]{
+ 	margin:10px 5px 0 0;
+	border: 1.5px solid #fe620d;
+	border-radius: 3px;
+	font-family: "KOPUB_M";
+	width: 150px;
+	padding: 1px 8px;
+}
+
+#board_list button{
+ 	margin: 20px auto 5px auto;
+	background-color: #fe620d;
+ 	border: none;
+ 	border-radius: 3px;
+  	color: white;
+ 	padding: 2px 10px;
+ 	font-size:11pt;
+}
+#board_list button:hover{
+	background-color: #fea676;
+}
+
+#board_list .titles{
+	background-color:#fe620d;
+	font-family: "KOPUB_M";
+	color:#fff;
+}
+#board_list span{
+   display: inline-block;
+   text-align: center;
+}
+
+#board_list .sno{width: 100px;}
+#board_list .subject{width:260px;}
+#board_list .nal{width:180px; }
+#board_list .id{width:150px; }
+#board_list .hit{width:120px; }
+
+#board_list .item:nth-child(5n){
+   border-bottom: 1px solid #fe620d;
+}
+#board_list .item:last-child{
+	border-bottom: 2px solid #fe620d;
+}
+#board_list .item:hover{
+	background-color: #fea676;
+	cursor:pointer;
+}

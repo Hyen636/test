@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+
+@font-face{
+	src: url("../font/KOPUBWORLD DOTUM MEDIUM.TTF");
+    font-family: "KOPUB_M";
+}
+ 
+@font-face{
+	src:url("../font/KOPUBWORLD DOTUM LIGHT.TTF");
+	font-family: "KOPUB_L";
+}
+
+@font-face{
+	src:url("../font/KOPUBWORLD DOTUM BOLD.TTF");
+	font-family: "KOPUB_B";
+}
+
+
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: "KOPUB_L";
+}
+
+#product h2{
+	text-align:center;
+	margin-top:20px;
+	color:  #fe620d;
+	font-family: "KOPUB_B";
+	font-size: 30px;
+}
+
+#product .content{
+	display:flex;
+	flex-direction:row;
+}
+
+
+/* product_input */
+#product .left{
+	flex-basis: 400px;
+	padding: 10px;
+}
+
+#frm_product_input{
+	padding: 30px 40px; 
+	border: 2px solid #fe620d;
+	border-radius:10px;
+	margin: 43px auto;
+}
+
+#product_input label{
+	display:inline-block;
+	width:70px;
+	text-align:left;
+	margin: 5px 5px auto auto; 
+	color:#5a5a5a;
+	font-family: "KOPUB_M";
+}
+
+#product input[type=text], #product input[type=date]{
+	margin:10px 5px 0 0;
+	border: 1.5px solid #fe620d;
+	border-radius: 3px;
+	font-family: "KOPUB_M";
+	width: 150px;
+	padding: 1px 8px;
+}
+
+#product .amt, #product .ea, #product .price{
+	text-align:right;
+}
+
+#product input:read-only{
+	background-color: #ffad82;
+	border:none;
+}
+
+#product_input hr{
+	margin:15px 0px 10px 0px;
+	border:solid 1px #fe620d;
+}
+
+#product button{
+	margin: 20px auto 5px auto;
+	background-color: #fe620d;
+ 	border: none;
+ 	border-radius: 3px;
+  	color: white;
+ 	padding: 2px 10px;
+ 	font-size:11pt;
+}
+
+#frm_product_input .btnSearch{
+	margin: 0px 0px 0px 0px;
+}
+
+#product button:hover{
+	background-color: #fea676;
+}
+
+#product button:disabled{
+	background-color: #fea676;
+	
+}
+
+#product #btns{
+	text-align: center;
+}
+
+
+
+/* product_list */
+#product .right{
+	flex-grow:1;
+	padding:10px;
+	text-align:center;
+}
+
+#product_list{
+	width:750px;
+	line-height:1.5em;
+	margin:auto;
+}
+
+#frm_product_list{
+	text-align: right;
+}
+
+#frm_product_list button{
+	margin: -20px 0px 10px 0px;
+}
+
+#product_list .title{
+	background-color:#fe620d;
+	font-family: "KOPUB_M";
+	color:#fff;
+}
+
+#product_list span{
+	display:inline-block;
+	text-align:center;
+	margin:5px auto;
+}
+
+#product_list .sno{width:60px;}
+#product_list .code{width:100px;}
+#product_list .codeName{width:100px;}
+#product_list .nal{width:150px;}
+#product_list .ea{width:90px;}
+#product_list .price{width:90px;}
+#product_list .amt{width:90px;}
+
+#product_list .item:nth-child(5n){
+	border-bottom: 1px solid #fe620d;
+}
+
+#product_list .item:last-child{
+	border-bottom: 2px solid #fe620d;
+}
+
+#product_list .item:hover{
+	background-color: #fea676;
+	cursor:pointer;
+}
+

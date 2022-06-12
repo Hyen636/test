@@ -1,0 +1,103 @@
+@charset "UTF-8";
+/*
+파랑 5c7eec
+노랑 ffc414
+*/
+
+@font-face{
+	src:url("../font/MERMAID.TTF");
+    font-family: "CI"; 
+ }
+ 
+ @font-face{
+ 	src: url("../font/KOPUBWORLD DOTUM MEDIUM.TTF");
+    font-family: "KOPUB_M";
+ }
+ 
+ @font-face{
+    src:url("../font/KOPUBWORLD DOTUM LIGHT.TTF");
+    font-family: "KOPUB_L";
+ }
+ 
+
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: "KOPUB_L";
+}
+
+#main{
+	width: 1200px;
+	margin: 20px auto;
+	--background-color: #ddd;
+	min-height: 400px;
+}
+
+#header{
+	padding:5px;
+	text-align: right;
+}
+
+#top{
+	height: 130px;
+	background-image:url('../images/top.png');
+	position: relative;
+}
+
+#ci a{
+	color:#fff;
+	font-family:"CI";
+	font-size:45px;
+	position: absolute;
+	left : 13px;
+	top : 20px;
+	text-decoration: none;
+}
+
+
+#nav{
+	position: absolute;
+	left : 13px;
+	bottom: 13px;
+}
+
+#nav>ul{
+	background-color: #ffc414;
+	color:#ffffff;
+	font-family: "KOPUB_M";
+}
+
+#nav>ul li{
+	border-radius:2px;
+	display: inline-block;
+	padding:3px 10px;
+}
+
+#nav>ul li:hover{
+	cursor: pointer;
+	background-color: #ffe697;
+	color: #fff;
+}
+
+#nav a{
+	text-decoration: none;
+	color:#fff;
+	display:block;
+	width:100%;
+	height:100%;
+	margin:0px;
+}
+
+#nav li a:hover{
+	color: #fff;
+}
+
+#footer{
+	height: 100px;
+	background-color: #5c7eec;
+	text-align: center;
+	padding-top: 10px;
+	color: #fff;
+	font-family: "KOPUB_L";
+}
